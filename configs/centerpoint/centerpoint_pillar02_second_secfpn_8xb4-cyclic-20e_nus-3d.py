@@ -153,8 +153,8 @@ train_dataloader = dict(
             box_type_3d='LiDAR',
             backend_args=backend_args)))
 test_dataloader = dict(
-    dataset=dict(pipeline=test_pipeline, metainfo=dict(classes=class_names)))
+    dataset=dict(pipeline=test_pipeline, metainfo=dict(classes=class_names, version=version)))
 val_dataloader = dict(
-    dataset=dict(pipeline=test_pipeline, metainfo=dict(classes=class_names)))
+    dataset=dict(pipeline=test_pipeline, metainfo=dict(classes=class_names, version=version)))
 
 train_cfg = dict(val_interval=20)
