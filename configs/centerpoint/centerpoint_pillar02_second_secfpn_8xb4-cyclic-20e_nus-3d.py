@@ -15,6 +15,7 @@ class_names = [
     'car', 'truck', 'construction_vehicle', 'bus', 'trailer', 'barrier',
     'motorcycle', 'bicycle', 'pedestrian', 'traffic_cone'
 ]
+version='v1.0-mini'
 data_prefix = dict(pts='samples/LIDAR_TOP', img='', sweeps='sweeps/LIDAR_TOP')
 model = dict(
     data_preprocessor=dict(
@@ -143,7 +144,7 @@ train_dataloader = dict(
             data_root=data_root,
             ann_file='nuscenes_infos_train.pkl',
             pipeline=train_pipeline,
-            metainfo=dict(classes=class_names),
+            metainfo=dict(classes=class_names, version=version),
             test_mode=False,
             data_prefix=data_prefix,
             use_valid_flag=True,
